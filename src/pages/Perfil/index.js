@@ -18,22 +18,30 @@ const Perfil = () => {
     return <p>Carregando...</p>;
   }
 
-  // const newArr = state.organisations.map((item) => {
-  //   return item.login;
-  // });
-  // console.log(newArr);
-
   return (
-    <>
-      {console.log(state.organisations)}
-      <p>{state.nickname}</p>
-      <p>{state.github_profile}</p>
-      <ul>
-        {state.organisations.map((item) => {
-          <li key={item.login}>{item.login}</li>;
-        })}
-      </ul>
-    </>
+    <div className="container">
+      <div className="row">
+        <div className="col s12">
+          <h1 className="center-align">{state.nickname}</h1>
+          <h4 className="center-align">
+            <a href={state.github_profile} target="_blank">
+              {state.github_profile}
+            </a>
+          </h4>
+        </div>
+      </div>
+
+      <div className="row">
+        {state.organisations.map((item) => (
+          <div key={item.login}>
+            <div className="col s4">
+              <h2>{item.login}</h2>
+              <img className="responsive-img" src={item.avatar_url} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
