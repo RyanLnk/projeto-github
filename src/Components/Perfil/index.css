@@ -1,0 +1,12 @@
+body {
+  font-family: Comic Sans MS;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:hover img {
+  background-color: #f8f8ff;
+}
